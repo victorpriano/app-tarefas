@@ -1,7 +1,7 @@
 <template>
     <div class="bloco-form">
         <div class="titulo">
-            <h1>Minhas Tarefas</h1>
+            <h1>Lista de Tarefas</h1>
         </div>
         <div class="formulario">
             <input class="form-control" id="form" type="text" v-model="descricao" placeholder="Informe uma descrição" />
