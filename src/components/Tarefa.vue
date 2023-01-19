@@ -1,8 +1,10 @@
 <template>
-    <div>
-        <ul>
-            <li>{{ tarefa.descricao }}</li>
-        </ul>
+    <div class="tarefa">
+        <div>
+            <div class="descricaoTarefa">
+                {{ tarefa.descricao }}
+            </div>
+        </div>
     </div>
 </template>
 
@@ -21,3 +23,13 @@ export default defineComponent({
     }
 })
 </script>
+
+<style scoped>
+    .tarefa {
+        width: 480px;
+        margin-bottom: 10px;
+        background-color: #c2d8b9;
+        padding: 12px;
+        border-radius: 5px;
+    }
+</style>

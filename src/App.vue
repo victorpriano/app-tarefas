@@ -1,20 +1,15 @@
 <template>
   <main>
-    <div class="box">
-      <div class="title">
-        <h1>Tarefas</h1>
+      <div>
+        <div class="formulario">
+          <Formulario @aoSalvarTarefa="salvarTarefa" />
+        </div>
+        <div class="box-tarefas">
+          <div class="tarefas">
+            <Tarefa v-for="(tarefa, index) in tarefas" :key="index" :tarefa="tarefa" />
+          </div>
+        </div>
       </div>
-
-      <div class="formulario">
-        <Formulario @aoSalvarTarefa="salvarTarefa" />
-      </div>
-
-      <div class="tarefas">
-        <Tarefa v-for="(tarefa, index) in tarefas" :key="index" :tarefa="tarefa" />
-      </div>
-
-    </div>
-
   </main>
 </template>
 
@@ -47,19 +42,40 @@ export default defineComponent({
 
 <style>
   main {
-    width: 96vw;
-    height: 80vh;
-    display: flex;
+    max-width: 100%;
+    height: 100vh;
     background: #c2d8b9;
-    align-items: center;
-    flex-direction: row;
+    padding-top: 30px;
+    display: flex;
     justify-content: center;
+    align-content: center;
+    flex-direction: row;
   }
-  .box {
+
+  .box-tarefas {
+    width: 500px;
+    height: 500px;
+    margin-top: 10px; 
     background-color: #e4f0d0;
-    width: 300px;
-    height: 300px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 2px;
+    overflow: auto;
+  }
+
+  .tarefas {
+    margin-top: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+  }
+  
+  ::-webkit-scrollbar {
+      width: 6px;
+      background: #F4F4F4;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: #dad7d7;
   }
 </style>

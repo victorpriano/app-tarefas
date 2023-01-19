@@ -1,7 +1,12 @@
 <template>
-    <div>
-        <input class="form-control" type="text" v-model="descricao" placeholder="Informe uma descrição" />
-        <button class="btn btn-light" @click="salvar">Criar</button>
+    <div class="bloco-form">
+        <div class="titulo">
+            <h1>Minhas Tarefas</h1>
+        </div>
+        <div class="formulario">
+            <input class="form-control" id="form" type="text" v-model="descricao" placeholder="Informe uma descrição" />
+        </div>
+        <button class="botao btn btn-light" @click="salvar">Criar</button>
     </div>
 </template>
 
@@ -22,6 +27,7 @@ export default defineComponent({
             this.$emit('aoSalvarTarefa', {
                 descricao: this.descricao
             })
+            this.descricao = ''
         }
     }
 
@@ -29,5 +35,22 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
+    .titulo {
+        text-align: center;
+    }
+    .formulario {
+        display: inline-block
+    }
+
+    .formulario input {
+        width: 428px;
+        margin-left: 3px;
+    }
+
+    .botao {
+        margin-bottom:3px;
+        margin-left: 5px;
+    }
 
 </style>
